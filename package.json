@@ -1,0 +1,24 @@
+{
+  "name": "practice-diary",
+  "version": "1.0.0",
+  "description": "an online practice diary web app",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harpistalex/OnlinePracticeDiary.git"
+  },
+  "author": "Alexandra King",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harpistalex/OnlinePracticeDiary/issues"
+  },
+  "homepage": "https://github.com/harpistalex/OnlinePracticeDiary#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.2.0"
+  }
+}
