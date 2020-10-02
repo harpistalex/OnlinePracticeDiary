@@ -1,6 +1,6 @@
 var express = require('express')
 // to access the JS in the controller module
-//var todoController = require('./controller/todoController')
+var controller = require('./controller/controller')
 
 var admin = require("firebase-admin")
 var serviceAccount = require("./onlinepracticediary-firebase-adminsdk-1u3gq-8c1262c3dc.json")
@@ -20,7 +20,7 @@ app.use(express.static('views'))
 app.set('views', __dirname + '/views')
 
 // fire controllers (so we can use this app.js file in the controller file)
-//todoController(app)
+controller(app)
 
 // listen to port
 const port = 3000
