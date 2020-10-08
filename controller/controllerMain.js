@@ -4,7 +4,8 @@ module.exports = function(app) {
         response.render('login.ejs')
     })
 
-    app.get('/signedIn', function(request, response) {
+    app.post('/', function(request, response) {
+        console.log('well done')
         response.render('practiceDiary.ejs')
     })
 
