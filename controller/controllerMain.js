@@ -4,5 +4,9 @@ module.exports = function(app) {
         response.render('login.ejs')
     })
 
+    app.get('/signedIn', function(request, response) {
+        response.render('practiceDiary.ejs')
+    })
+
 }
 
