@@ -1,15 +1,9 @@
 const express = require('express')
+const logger = require('morgan')
 // to access the JS in the controller module
 const controller = require('./controller/controllerMain')
-const logger = require('morgan')
-
-const admin = require("firebase-admin")
-const serviceAccount = require("./onlinepracticediary-firebase-adminsdk-1u3gq-8c1262c3dc.json")
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://onlinepracticediary.firebaseio.com"
-})
-
+// to acccess Firebase
+//rsconst firebase = require('./controller/controllerFirebase.js')
 
 const app = express()
 
