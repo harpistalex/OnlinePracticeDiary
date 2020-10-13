@@ -3,7 +3,7 @@ const logger = require('morgan')
 // to access the JS in the controller module
 const controller = require('./controller/controllerMain')
 // to acccess Firebase
-//rsconst firebase = require('./controller/controllerFirebase.js')
+//const firebase = require('./controller/controllerFirebase.js')
 
 const app = express()
 
