@@ -1,8 +1,10 @@
+const { register } = require('./controllerFirebase.js')
+
 module.exports = function(app) {
 
     const fb = require('./controllerFirebase.js')
     const bodyParser = require('body-parser')
-    const urlencodedParser = bodyParser.urlencoded({extended: false})
+    const urlencodedParser = bodyParser.urlencoded({extended: true})
 
     ///////////////
 /*
@@ -17,19 +19,33 @@ module.exports = function(app) {
     var db = admin.database()
     var ref = db.ref("/")
 */
-    //////////////
+    // MARK: - Login:
 
-    app.get('/', function(request, response) {
+    app.get('/*', function(request, response) {
         response.render('login.ejs')
     })
 
     app.post('/', urlencodedParser, function(request, response) {
         // do firebase stuff
-        console.log(request.body)
+        if (request.body.action === 'login') {
+            console.log('well dun you logged in')
+            const user = fb.getUserByEmail(request.body.email)
+            console.log(user)
+        } else {
+            if (request.body.password === request.body.repeatPassword) {
+                console.log(`Password is good! ${request.body.password}`)
+                fb.register(request.body.username, request.body.email, request.body.password)
+                console.log('well dun you registered')
+            } else {
+                console.log(`Password is bad! ${request.body.password}, ${request.body.repeatPassword}`)
+            }
+        }
+
+        
         //response.render('practiceDiary.ejs')
     })
 
-
+ // MARK: - Practice Diary
 
     app.get('/practiceDiary', function(request, response) {
         response.render('practiceDiary.ejs')

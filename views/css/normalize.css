@@ -425,3 +425,18 @@ td,
 th {
   padding: 0;
 }
+
+/* EXTRA */
+
+#form-switch {
+  display:none
+}
+#register-form {
+  display:none
+}
+#form-switch:checked~#register-form {
+  display:block
+}
+#form-switch:checked~#login-form {
+  display:none
+}
