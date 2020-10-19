@@ -40,8 +40,7 @@ module.exports = function(app) {
                 console.log(`Password is bad! ${request.body.password}, ${request.body.repeatPassword}`)
             }
         }
-
-        
+ 
         //response.render('practiceDiary.ejs')
     })
 
