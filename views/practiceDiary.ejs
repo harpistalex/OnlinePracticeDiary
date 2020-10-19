@@ -25,26 +25,55 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Firebase
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyDSsXYRb4An3CgUml8e4ZhhaXi5uTZOlkQ",
+      authDomain: "onlinepracticediary.firebaseapp.com",
+      databaseURL: "https://onlinepracticediary.firebaseio.com",
+      projectId: "onlinepracticediary",
+      storageBucket: "onlinepracticediary.appspot.com",
+      messagingSenderId: "1074022613000",
+      appId: "1:1074022613000:web:ee1218dc65e359df6a11bd",
+      measurementId: "G-KR0FY32HC4"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
 </head>
-<script type="text/javascript" src="js/materialize.min.js"></script>
+
 <body>
-
-
   <div class="container">
     <div class="row">
       <div class="one-half column" style="margin-top: 25%">
       <h1>Practice Diary</h1>
       
-      <!-- TODO: EJS tags and display username -->
-      <h4>Hello USER</h4>
+      <h4 id="greeting"></h4>
         <br>
         <h2>DO UR PRACTICE</h2>
           <form action="/practiceDiary" method="POST">
             <button class="button-primary," type="submit">Gone dun my practice!</button>
           </form>
+          <br><br>
+          <!-- Logout -->
+          <button id="logout" onclick={signOut()}>Logout</button>
       </div>
     </div>
   </div>
-
+  <script src="js/firebaseAuthFront.js"></script>
 </body>
 </html>
